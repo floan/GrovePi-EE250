@@ -36,3 +36,32 @@ if __name__ == '__main__':
         time.sleep(0.2)
 
         print(grovepi.ultrasonicRead(PORT))
+        """
+        	Things to do: 
+        	1. Allow the rotary encoder to change the threshold value
+        	2. Poll the distance to the object 
+        	3. Find out if the distance passes the threshold value 
+        	4. Print to the LCD the value, whether the object is present or not and current distance
+        	5. (Optional) Change the color of the LCD when it passes the threshold level.
+        """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
