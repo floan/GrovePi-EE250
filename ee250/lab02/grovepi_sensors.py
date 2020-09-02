@@ -87,12 +87,17 @@ if __name__ == '__main__':
 
             if(thresholdLevel != oldThreshold):
                 oldThreshold = thresholdLevel
+                for x in range(3):
+                    textBuffer[x] = ""
                 for i in range(len(str(thresholdLevel))):
                     textBuffer[i] = str(thresholdLevel)[i]
                 setText_norefresh("".join(textBuffer))
 
             if(distanceInCm != oldDistance):
                 oldDistance = distanceInCm 
+                for x in range(16, 19):
+                    textBuffer[x] = ""
+
                 for i in range(len(str(distanceInCm))):
                     textBuffer[i+16] = str(distanceInCm)[i]
                 setText_norefresh("".join(textBuffer))
