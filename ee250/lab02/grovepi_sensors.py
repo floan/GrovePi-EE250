@@ -86,6 +86,7 @@ if __name__ == '__main__':
             if(thresholdLevel != oldThreshold):
                 oldThreshold = thresholdLevel
                 textToPrint.join(str(thresholdLevel))
+                setText_norefresh(textToPrint)
 
 
 
