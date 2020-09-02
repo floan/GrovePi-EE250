@@ -112,9 +112,11 @@ if __name__ == '__main__':
                 textBuffer[11] = "R"
                 textBuffer[12] = "E"
                 textBuffer[13] = "S"
+                setRGB(255,0,0)
             else:
                 for x in range(6, 14):
                     textBuffer[x] = " "
+                setRGB(0,255,0)
 
 
 
