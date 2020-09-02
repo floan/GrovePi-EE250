@@ -119,6 +119,7 @@ if __name__ == '__main__':
                     textBuffer[x] = " "
                 setText_norefresh("".join(textBuffer))
                 setRGB(0,255,0)
+                
 
 
 
