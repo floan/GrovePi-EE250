@@ -88,7 +88,8 @@ if __name__ == '__main__':
             if(thresholdLevel != oldThreshold):
                 oldThreshold = thresholdLevel
                 for x in range(3):
-                    textBuffer[x] = ""
+                    textBuffer[x] = " "
+
                 for i in range(len(str(thresholdLevel))):
                     textBuffer[i] = str(thresholdLevel)[i]
                 setText_norefresh("".join(textBuffer))
@@ -96,12 +97,25 @@ if __name__ == '__main__':
             if(distanceInCm != oldDistance):
                 oldDistance = distanceInCm 
                 for x in range(16, 19):
-                    textBuffer[x] = ""
+                    textBuffer[x] = " "
 
                 for i in range(len(str(distanceInCm))):
                     textBuffer[i+16] = str(distanceInCm)[i]
                 setText_norefresh("".join(textBuffer))
-                
+            
+            if(distanceInCm < thresholdLevel):
+                textBuffer[6] = "O"
+                textBuffer[7] = "B"
+                textBuffer[8] = "J"
+                textBuffer[9] = " "
+                textBuffer[10] = "P"
+                textBuffer[11] = "R"
+                textBuffer[12] = "E"
+                textBuffer[13] = "S"
+            else:
+                for x in range(6, 14):
+                    textBuffer[x] = " "
+
 
 
         except KeyboardInterrupt: 
