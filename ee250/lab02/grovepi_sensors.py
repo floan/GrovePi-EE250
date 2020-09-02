@@ -46,12 +46,13 @@ if __name__ == '__main__':
     #Defining the max range as 517 (max for the ultrasonic range)
     MAX_RANGE = 517
 
-    #Initializing an variable to later compare and see if the threshold has been changed
+    #Initializing a variable to later compare and see if the threshold has been changed
     oldThreshold = -1
-    oldsensor = -1
+    #Initializing a variable to later compare and see if the distance has been changed
+    oldDistance = -1
 
-    #Initializing a variable to store text to print
-    textToPrint = ""
+    #Initializing a variable to store text to print. This is a list with 32 entries
+    textBuffer = list("   cm              cm           ")
 
     while True:
         try:
@@ -86,12 +87,16 @@ if __name__ == '__main__':
 
             if(thresholdLevel != oldThreshold):
                 oldThreshold = thresholdLevel
-                textToPrint = str(thresholdLevel)
-                setText_norefresh(textToPrint)
+                for i in range(len(str(thresholdLevel))):
+                    textBuffer[i] = str(thresholdLevel)[i]
+                setText_norefresh("".join(textBuffer))
 
-            if(distanceInCm != oldsensor):
-                oldsensor = distanceInCm 
-                setText_norefresh("\n" + str(distanceInCm))
+            if(distanceInCm != oldDistance):
+                oldDistance = distanceInCm 
+                for i in range(len(str(distanceInCm))):
+                    textBuffer[i+16] = str(distanceInCm)[i]
+                setText_norefresh("".join(textBuffer))
+                
 
 
         except KeyboardInterrupt: 
