@@ -83,10 +83,10 @@ if __name__ == '__main__':
             # Calculate LED brightess (0 to 255) from degrees (0 to 300)
             thresholdLevel = int(degrees / full_angle * 517)
 
-            if(thresholdLevel != oldThreshold){
+            if(thresholdLevel != oldThreshold):
                 oldThreshold = thresholdLevel
                 textToPrint.join(str(thresholdLevel))
-            }
+
 
 
         except KeyboardInterrupt: 
