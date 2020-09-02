@@ -48,6 +48,7 @@ if __name__ == '__main__':
 
     #Initializing an variable to later compare and see if the threshold has been changed
     oldThreshold = -1
+    oldsensor = -1
 
     #Initializing a variable to store text to print
     textToPrint = ""
@@ -85,9 +86,12 @@ if __name__ == '__main__':
 
             if(thresholdLevel != oldThreshold):
                 oldThreshold = thresholdLevel
-                textToPrint.join(str(thresholdLevel))
+                textToPrint = str(thresholdLevel)
                 setText_norefresh(textToPrint)
 
+            if(distanceInCm != oldsensor):
+                oldsensor = distanceInCm 
+                setText_norefresh("\n" + str(distanceInCm))
 
 
         except KeyboardInterrupt: 
